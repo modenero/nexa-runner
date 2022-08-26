@@ -12,7 +12,7 @@ import path from 'path'
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { autoUpdater } from 'electron-updater'
 import log from 'electron-log'
-// import fs from 'fs'
+
 import TailingStream = require('tailing-stream')
 
 import { spawn } from 'child_process'
@@ -21,10 +21,16 @@ import kill from 'tree-kill'
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
 
+/**
+ * Auto Updater
+ */
 class AppUpdater {
+    /* Constructor. */
     constructor() {
         log.transports.file.level = 'fsinfo'
+
         autoUpdater.logger = log
+
         autoUpdater.checkForUpdatesAndNotify()
     }
 }

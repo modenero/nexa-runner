@@ -1,3 +1,5 @@
+// import Bugsnag from '@bugsnag/electron'
+
 import { createRoot } from 'react-dom/client'
 
 import 'tailwindcss/tailwind.css'
@@ -11,6 +13,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 // } from '@fortawesome/free-solid-svg-icons'
 
 import App from './App'
+
+// Bugsnag.start({ apiKey: '6a614b8e3b8bb1c0ed6092eef4b6c305' })
 
 library.add(fab, fas)
 // library.add(fab, faCheckSquare, faCoffee)

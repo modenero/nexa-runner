@@ -1,3 +1,6 @@
+// import Bugsnag from '@bugsnag/electron'
+// Bugsnag.start()
+
 import { Link } from 'react-router-dom'
 
 import {
@@ -20,6 +23,8 @@ const data = [
 ]
 
 const startMining = () => {
+    // Bugsnag.notify(new Error('Start mining ERROR!'))
+
     /* Send IPC message. */
     window.electron.ipcRenderer
         .sendMessage(

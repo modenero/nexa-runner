@@ -304,6 +304,228 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bugsnag/core@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.17.0.tgz#0422b87108c7807f6e334a573213126685b6df3d"
+  integrity sha512-qt3+Ub64tspbdb6wMiJZIOFyKGv7ZSGRa66GjBmW3Y9cTb42Y8cNx1/0hxY4cDhSbwfunGTqKCcjFRrRcTlfNA==
+  dependencies:
+    "@bugsnag/cuid" "^3.0.0"
+    "@bugsnag/safe-json-stringify" "^6.0.0"
+    error-stack-parser "^2.0.3"
+    iserror "0.0.2"
+    stack-generator "^2.0.3"
+
+"@bugsnag/cuid@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/cuid/-/cuid-3.0.0.tgz#2ee7642a30aee6dc86f5e7f824653741e42e5c35"
+  integrity sha512-LOt8aaBI+KvOQGneBtpuCz3YqzyEAehd1f3nC5yr9TIYW1+IzYKa2xWS4EiMz5pPOnRPHkyyS5t/wmSmN51Gjg==
+
+"@bugsnag/delivery-electron@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/delivery-electron/-/delivery-electron-7.17.0.tgz#b48deee12fd1af504c31235717dcebb7de4ca849"
+  integrity sha512-2K1Irp1vi8AAveniVbMoIQS18W1UpiJZ9M3t2UAo6Egkx9ur3G8vO1nGv+IgURvP49+53+xR6mjOjWU1NPAIWw==
+
+"@bugsnag/electron-filestore@^7.16.2":
+  version "7.16.2"
+  resolved "https://registry.yarnpkg.com/@bugsnag/electron-filestore/-/electron-filestore-7.16.2.tgz#bffb06a2e8e64f83a03a8fe7cfbb48ecdca10f92"
+  integrity sha512-nMoSwsIIePj+JJOG/FDRtcKYhax3kF297KcejEVXP42LBqZpDAROaMrgsFxH6E3RTab4P8hyyYD1t3Ffjh+aag==
+
+"@bugsnag/electron-network-status@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/electron-network-status/-/electron-network-status-7.17.0.tgz#c33ec1dc30dd449b483c230fffe2ffe04ca29ec7"
+  integrity sha512-ofmBuZm4LMk2+EQeQvY9BDPSnRjwtoUYYC0zQy0sYBdQTGtz49TD2ZazC4qrnb2okF/5ZLR6NeUaZwBrxhxwyQ==
+
+"@bugsnag/electron@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/electron/-/electron-7.17.0.tgz#7d3f2c76fb04ed3b391a9bb6eb85dbd176180a78"
+  integrity sha512-uoPUUEiF7kbzMnITufw+GUF0y0C9QY+ujgEDtJqk0I3mV/05o88mnzpRVm/L1m0KeFpmjhBZ49qtJ/mzVoBiFQ==
+  dependencies:
+    "@bugsnag/core" "^7.17.0"
+    "@bugsnag/delivery-electron" "^7.17.0"
+    "@bugsnag/electron-filestore" "^7.16.2"
+    "@bugsnag/electron-network-status" "^7.17.0"
+    "@bugsnag/plugin-console-breadcrumbs" "^7.17.0"
+    "@bugsnag/plugin-electron-app" "^7.17.0"
+    "@bugsnag/plugin-electron-app-breadcrumbs" "^7.17.0"
+    "@bugsnag/plugin-electron-client-state-manager" "^7.17.0"
+    "@bugsnag/plugin-electron-client-state-persistence" "^7.17.0"
+    "@bugsnag/plugin-electron-deliver-minidumps" "^7.17.0"
+    "@bugsnag/plugin-electron-device" "^7.17.0"
+    "@bugsnag/plugin-electron-ipc" "^7.17.0"
+    "@bugsnag/plugin-electron-net-breadcrumbs" "^7.17.0"
+    "@bugsnag/plugin-electron-network-status" "^7.17.0"
+    "@bugsnag/plugin-electron-preload-error" "^7.17.0"
+    "@bugsnag/plugin-electron-process-info" "^7.17.0"
+    "@bugsnag/plugin-electron-renderer-client-state-updates" "^7.17.0"
+    "@bugsnag/plugin-electron-renderer-event-data" "^7.17.0"
+    "@bugsnag/plugin-electron-renderer-strip-project-root" "^7.17.0"
+    "@bugsnag/plugin-electron-session" "^7.17.0"
+    "@bugsnag/plugin-interaction-breadcrumbs" "^7.17.0"
+    "@bugsnag/plugin-internal-callback-marker" "^7.17.0"
+    "@bugsnag/plugin-network-breadcrumbs" "^7.17.0"
+    "@bugsnag/plugin-node-surrounding-code" "^7.17.0"
+    "@bugsnag/plugin-node-uncaught-exception" "^7.17.0"
+    "@bugsnag/plugin-node-unhandled-rejection" "^7.17.0"
+    "@bugsnag/plugin-stackframe-path-normaliser" "^7.17.0"
+    "@bugsnag/plugin-strip-project-root" "^7.17.0"
+    "@bugsnag/plugin-window-onerror" "^7.17.0"
+    "@bugsnag/plugin-window-unhandled-rejection" "^7.17.0"
+
+"@bugsnag/plugin-browser-session@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-browser-session/-/plugin-browser-session-7.17.0.tgz#77f31357ed73aee49e2e80af55e885f8bfa8f1e0"
+  integrity sha512-CStYunhISAAlaDSgY7FB72kNjzU6PXmvXSLoT9mpfDx51NZaceQOLh4yVJyhMG5sUA96JYY+ymycTmPlqjzfIQ==
+
+"@bugsnag/plugin-console-breadcrumbs@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-console-breadcrumbs/-/plugin-console-breadcrumbs-7.17.0.tgz#b9d935f6b137e8e4261ccfa11b6cb2a5c0ecc77f"
+  integrity sha512-2DhI3Zx3n3eDulE2AI+fZ/3bkNa7b0fa5rz2FX4n6Yp6Z28MCBVhDu4HHzA5POKlTqbcT08jHj28caDz0bzI+A==
+
+"@bugsnag/plugin-electron-app-breadcrumbs@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-app-breadcrumbs/-/plugin-electron-app-breadcrumbs-7.17.0.tgz#56c4b3f8397f16c59a77c595319bde4d5c230f9d"
+  integrity sha512-t7SXZuxi2+SC8b5FpdZ3JxgQt5gj8cjBNYAXE2FlQLYZY3bT4PEWCX6UabbgJSkpj9weufpy+9tPoNzAns82vg==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
+"@bugsnag/plugin-electron-app@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-app/-/plugin-electron-app-7.17.0.tgz#f44558f95500d582e8d814507de5c1e38ea0c9cb"
+  integrity sha512-ilnMSo24dpTcEXCTNK47ameYsxfepu1FZkBCryukYNHzi0SfZwIjKjUtylC/PABeO5mcaNEQmmalpXM9jP/4qQ==
+  dependencies:
+    bindings "^1.5.0"
+
+"@bugsnag/plugin-electron-client-state-manager@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-client-state-manager/-/plugin-electron-client-state-manager-7.17.0.tgz#925fca43fe6939c5efd8967f36e4cd5bb0c42539"
+  integrity sha512-Var84UEPODkP15BX7OzRACaAx7dQgoTgNjaLmchdn3F3Cdxs3lXg+tgZQ/WWCpR0SG4CWrqoqJrV77hzPzfh0w==
+
+"@bugsnag/plugin-electron-client-state-persistence@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-client-state-persistence/-/plugin-electron-client-state-persistence-7.17.0.tgz#3f27540024e374653b4f6501dacfe96f91b0f1f7"
+  integrity sha512-MczVwBrT+DaFdr36A2A5OSENqUpGIePgyn0rVwh9w8pXwggtmH7DTZsRM/ZPVWRnYGAlvnjyDGIXhhLfBTEvhg==
+  dependencies:
+    bindings "^1.5.0"
+
+"@bugsnag/plugin-electron-deliver-minidumps@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-deliver-minidumps/-/plugin-electron-deliver-minidumps-7.17.0.tgz#cb652ec67b40936c3a51de16927cd7d74cb21046"
+  integrity sha512-tcnZAIro81ZZfAqXc9ZrcxCOK+qgvdCTHb0+maCdkUA8ZKiErqWaZGmNVMtbThA9/H6x3ZM4mZ4SzVF2MqZnsQ==
+  dependencies:
+    form-data "^4.0.0"
+
+"@bugsnag/plugin-electron-device@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-device/-/plugin-electron-device-7.17.0.tgz#059b8146cd784f7a0dd63b7ac81a498248ac476e"
+  integrity sha512-/rHTAunrcltpMQNt7ttgNMbJbT/odFaOkJtBDXk9wK1PUAzXaOMgn0qBESo02MNVBJJ1OxtzE30gbtF7S7NmjA==
+
+"@bugsnag/plugin-electron-ipc@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-ipc/-/plugin-electron-ipc-7.17.0.tgz#f2254b6cdca2ab60a6f904dfb11f71f96fe38d67"
+  integrity sha512-4H7tTUI7YkJ5jvqpmTBcHaw8WlJ0LKkVtVGWrhNsVpzCaiEH7YLroS7IeaUSvoy4ApkojnLBYIU+OG1DfV9SOQ==
+  dependencies:
+    "@bugsnag/safe-json-stringify" "^6.0.0"
+
+"@bugsnag/plugin-electron-net-breadcrumbs@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-net-breadcrumbs/-/plugin-electron-net-breadcrumbs-7.17.0.tgz#4d1bbf8ad26972a450ed16e23d7e230713e1853b"
+  integrity sha512-7vQf8KC0laMUkX3tWUEvJ1gnCu1Ww4kuvDJsUzWFAKf007R2/V5tpWd2X2TGIKDA7mGw+PnQIqVfJCjE0QJ//w==
+
+"@bugsnag/plugin-electron-network-status@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-network-status/-/plugin-electron-network-status-7.17.0.tgz#680881c6c2c282863f886d42cc7e030f2e88dca0"
+  integrity sha512-29KPU70onIh4IJ4udhFboeOSUD+cpqGcvwPd1IN6fGuw2qGprn+VVhpxtuIY05/vMu5zg6JaMQNDBojccwHnfA==
+
+"@bugsnag/plugin-electron-preload-error@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-preload-error/-/plugin-electron-preload-error-7.17.0.tgz#0a2dab545944428f56ff787f2619255d7ee7d395"
+  integrity sha512-NaO93q/NW978wrp6+S/g8gis5gUq+E3q5WdmOJwqX0UqFb9E2AISV0AlhNrP+4YiipTNuKhDoIbiamakxxmoLg==
+
+"@bugsnag/plugin-electron-process-info@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-process-info/-/plugin-electron-process-info-7.17.0.tgz#f562841f50b8283e81357528cd947c1fc964a532"
+  integrity sha512-TGfVSppLL8k5jVBJoLxmaWFpZdSBf/t2rpVlMl7sURKfhK+6onY1KEJX7ym+Rwkvfza0mnC39lPLN8t9Nu6DWA==
+
+"@bugsnag/plugin-electron-renderer-client-state-updates@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-renderer-client-state-updates/-/plugin-electron-renderer-client-state-updates-7.17.0.tgz#1f24b5bf456829235a665aa4b0c54c11fd01441e"
+  integrity sha512-6aynlBHEIy12gtGKrMUIF+AiYX9jzWKXfz3kZfERavW95OmPxRg4OD3KcKw6BIsENU85cyddlgI6DefkzQ2mxQ==
+
+"@bugsnag/plugin-electron-renderer-event-data@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-renderer-event-data/-/plugin-electron-renderer-event-data-7.17.0.tgz#17456cef0498b395819eea64d6df52de9f30dc5a"
+  integrity sha512-v9AaKiRnsWm8CSqNLcqhIDCR1LHpwbFnj2tEWd6opN2arR105xow+nxWw10sTbtQUJR1K6b9NhjdjPtibo+JEA==
+
+"@bugsnag/plugin-electron-renderer-strip-project-root@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-renderer-strip-project-root/-/plugin-electron-renderer-strip-project-root-7.17.0.tgz#e0f05c65a1a949fb3af43480aa6cc5545d0b3f93"
+  integrity sha512-6qrTPAj6+J+pnSqKC2zjzbEBP0+nNiQGOcws+GnIAB8j79S2g4bCncarOEy1+8760GBcJEONUeIfCeZKKqYihg==
+
+"@bugsnag/plugin-electron-session@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-electron-session/-/plugin-electron-session-7.17.0.tgz#53ff2acef403b072c4c40ba9a56abe83bdff9580"
+  integrity sha512-AaaYzPpZAU5n721qIqpbudz8P1v7DS3GdgLB1oKdsE+3Na6jBdam0TkWPJHMBj/P38TNc33FAuBT2yo7jFiOqQ==
+  dependencies:
+    "@bugsnag/plugin-browser-session" "^7.17.0"
+
+"@bugsnag/plugin-interaction-breadcrumbs@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-interaction-breadcrumbs/-/plugin-interaction-breadcrumbs-7.17.0.tgz#ef6906e6e791b0a9f2f4b381e1e8c68537ae8907"
+  integrity sha512-z+2C65KWwKStvU6dB4nCytV1evVpAHfwLMWVaSk/IFKPvk0OGJpqvjjfOs+hUHn1Z5xPQ9WUbCRZRLKJJlt8Cw==
+
+"@bugsnag/plugin-internal-callback-marker@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-internal-callback-marker/-/plugin-internal-callback-marker-7.17.0.tgz#12d36755c8639a4708fcc832c5a4f13c9eb073fc"
+  integrity sha512-uOD0wo2SY+9rUcQdJlSrmnKWTSkXyOqKxvumG4YmQaVz4aYaO4lISFCu/DwFNNmYH2yNU62oN7hViGnLMQ/JLQ==
+
+"@bugsnag/plugin-network-breadcrumbs@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-network-breadcrumbs/-/plugin-network-breadcrumbs-7.17.0.tgz#99ebe3cafc2c8f724e5f5882f996e5e3f1b5c0cc"
+  integrity sha512-KhJb7LMKdBvGN54dAkPqC8BVr4G2uxrdX+MUL3GE2g3HDKFDxMQfka8Q8TVcvNgJEP5w3As+aVghd1kpDEuZ+g==
+
+"@bugsnag/plugin-node-surrounding-code@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-node-surrounding-code/-/plugin-node-surrounding-code-7.17.0.tgz#5be0853bd6e30489ad69d109d9fa233e9353c077"
+  integrity sha512-jhB0N9kWsFBxomAr3d0bXUw90UHlYFlMIKZLrojm8BByDIai9bsmLAO+nnwn7cV2xpkRtGhigb4Olib1fjhFkQ==
+  dependencies:
+    byline "^5.0.0"
+    pump "^3.0.0"
+
+"@bugsnag/plugin-node-uncaught-exception@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-node-uncaught-exception/-/plugin-node-uncaught-exception-7.17.0.tgz#990c58a913973a6c4f83abb0a8972236951f58f7"
+  integrity sha512-pOw8iqgyFu43GJFZ37sPsS/uLBsKjk5VstqbcyurHN0Fbgvw1beHes9qIYnh4XFm5rb5WK5fsFGtq8oCOSrVKA==
+
+"@bugsnag/plugin-node-unhandled-rejection@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-node-unhandled-rejection/-/plugin-node-unhandled-rejection-7.17.0.tgz#efd80d2c4c48bbef70833448dcad847351538e39"
+  integrity sha512-FNZl2mxWUILouGo5tgmYwZV/oiWfiBfKbbFvRSMD2B1ML2cvi9vfkwqiawxW4l+RdnRLwrtxzsOn75PlLRlWdg==
+
+"@bugsnag/plugin-stackframe-path-normaliser@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-stackframe-path-normaliser/-/plugin-stackframe-path-normaliser-7.17.0.tgz#1dafc935d97bca0a34aef57b6959a4fbae4f1639"
+  integrity sha512-UnINHwfLZVrkKEXwKjM3csetXc+O1CuXhrG7t0CSA2amJtymWgr8bcoSPuEdttlANijhUKyDs3H3UNwr5WU5HQ==
+
+"@bugsnag/plugin-strip-project-root@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-strip-project-root/-/plugin-strip-project-root-7.17.0.tgz#7f62dcad10c155176bf15e7549e5951ead63860b"
+  integrity sha512-ov1adfFQ/vNvkySdCLVzUkFDcEsxARr7hGwl1v4dVteYxPCg75izX86YKuN4awBaAMC4HLMIalYiRDDukCt88w==
+
+"@bugsnag/plugin-window-onerror@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-window-onerror/-/plugin-window-onerror-7.17.0.tgz#c1c0b4208aa93f06cbaa1b1038fd3e177a33558b"
+  integrity sha512-AU0cawT3s2hgUPWQiQ2BvHYY53xCNSWs/91NCBbuX99j9pukWcVVYH0VtGcgH2kEqeVMe1tpJLtebAeYeLnObA==
+
+"@bugsnag/plugin-window-unhandled-rejection@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-window-unhandled-rejection/-/plugin-window-unhandled-rejection-7.17.0.tgz#22ca76730883d148ef9f2c1ebbc25adb7318cb0e"
+  integrity sha512-qZocBj05L0sXY6YQ+/5j/xNeNQJjtE8clZyMNwSaRkhNSAbUM9LivMxyOS70tavVjrpECrCEFdjtpcg412OjKw==
+
+"@bugsnag/safe-json-stringify@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/safe-json-stringify/-/safe-json-stringify-6.0.0.tgz#22abdcd83e008c369902976730c34c150148a758"
+  integrity sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==
+
 "@cryptofonts/cryptofont@1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@cryptofonts/cryptofont/-/cryptofont-1.3.5.tgz#b9b2794c9bf0df482b9ae50a1f1549913391de35"
@@ -2278,6 +2500,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+bindings@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.5.0.tgz#10353c9e945334bc0511a6d90b38fbc7c9c504df"
+  integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
+  dependencies:
+    file-uri-to-path "1.0.0"
+
 bl@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bl/-/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -2494,6 +2723,11 @@ builder-util@23.0.2:
     source-map-support "^0.5.19"
     stat-mode "^1.0.0"
     temp-file "^3.4.0"
+
+byline@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/byline/-/byline-5.0.0.tgz#741c5216468eadc457b03410118ad77de8c1ddb1"
+  integrity sha512-s6webAy+R4SR8XVuJWt2V2rGvhnrhxN+9S15GNuTK3wKPOXFF6RNc+8ug2XhH+2s4f+uudG4kUVYmYOQWL2g0Q==
 
 bytes@3.0.0:
   version "3.0.0"
@@ -4076,7 +4310,7 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-error-stack-parser@^2.0.6:
+error-stack-parser@^2.0.3, error-stack-parser@^2.0.6:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.1.4.tgz#229cb01cdbfa84440bfa91876285b94680188286"
   integrity sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==
@@ -4743,6 +4977,11 @@ file-loader@6.2.0:
   dependencies:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
+
+file-uri-to-path@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
+  integrity sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==
 
 filelist@^1.0.1:
   version "1.0.4"
@@ -5860,6 +6099,11 @@ isbinaryfile@^4.0.8:
   resolved "https://registry.yarnpkg.com/isbinaryfile/-/isbinaryfile-4.0.10.tgz#0c5b5e30c2557a2f06febd37b7322946aaee42b3"
   integrity sha512-iHrqe5shvBUcFbmZq9zOQHBoeOhZJu6RQGrDpBgenUm/Am+F3JM2MgQj+rK3Z601fzrL5gLZWtAPH2OBaSVcyw==
 
+iserror@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/iserror/-/iserror-0.0.2.tgz#bd53451fe2f668b9f2402c1966787aaa2c7c0bf5"
+  integrity sha512-oKGGrFVaWwETimP3SiWwjDeY27ovZoyZPHtxblC4hCq9fXxed/jasx+ATWFFjCVSRZng8VTMsN1nDnGo6zMBSw==
+
 isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
@@ -6664,6 +6908,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
 lodash.difference@^4.5.0:
   version "4.5.0"
@@ -9133,6 +9382,13 @@ stable@^0.1.8:
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
+stack-generator@^2.0.3:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/stack-generator/-/stack-generator-2.0.10.tgz#8ae171e985ed62287d4f1ed55a1633b3fb53bb4d"
+  integrity sha512-mwnua/hkqM6pF4k8SnmZ2zfETsRUpWXREfA/goT8SLCV4iOFa4bzOX2nDipWAZFPTjLvQB82f5yaodMVhK0yJQ==
+  dependencies:
+    stackframe "^1.3.4"
+
 stack-utils@^2.0.3:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-2.0.5.tgz#d25265fca995154659dbbfba3b49254778d2fdd5"
@@ -9397,7 +9653,7 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-tailing-stream@^0.2.0:
+tailing-stream@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/tailing-stream/-/tailing-stream-0.2.0.tgz#4918471595369d9988fc557398168c91a827ecf9"
   integrity sha512-xdYNJrz1xo4izWGIEBTTVe285u57jP+yxiTSFRIFesdRtKfGJwDMze2psz7FmUX5D9SO+BRBYPLiUTKNoDvqbA==
@@ -9601,7 +9857,7 @@ tr46@^3.0.0:
   dependencies:
     punycode "^2.1.1"
 
-tree-kill@^1.2.2:
+tree-kill@1.2.2, tree-kill@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
