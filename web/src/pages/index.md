@@ -1,10 +1,10 @@
 ---
-title: Getting started
-pageTitle: CacheAdvance - Never miss the cache again.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+title: Nexa Runner Quick Setup
+pageTitle: Nexa Runner - Switch On Bitcoin 3.0
+description: Nexa Runner manages your full Nexa node, including all coin mining activities.
 ---
 
-Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free. {% .lead %}
+We're gonna show you how to get Nexa Runner running on your PC in under three minutes or it's free. {% .lead %}
 
 {% quick-links %}
 
