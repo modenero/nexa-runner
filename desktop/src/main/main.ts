@@ -12,7 +12,8 @@ import path from 'path'
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { autoUpdater } from 'electron-updater'
 import log from 'electron-log'
-import fs from 'fs'
+// import fs from 'fs'
+import TailingStream = require('tailing-stream')
 
 import { spawn } from 'child_process'
 import kill from 'tree-kill'
@@ -118,16 +119,22 @@ function run_script(command, args, _callback, _childid) {
     //     console.error(err)
     // });
 
-    const TailingReadableStream = require('tailing-stream')
+    /* Initialize tailing (log) stream. */
+    const logData = TailingStream
+        .createReadStream(logPath, { timeout: 0 })
 
-    const stream = TailingReadableStream.createReadStream(logPath, { timeout: 0 });
+    /* Handle log data. */
+    logData.on('data', _buf => {
+        // console.log('_buf.slice(0, 2)', _buf.slice(0, 2), _buf.toString());
 
-    stream.on('data', buffer => {
-        console.log('TAIL DATA', buffer.toString())
+        if (_buf.toString().indexOf('::') !== -1)
+            // console.log('LOG (tail) DATA', _buf.toString())
+            console.log(_buf.toString())
     })
 
-    stream.on('close', () => {
-        console.log("TAIL CLOSE")
+    /* Handle log close. */
+    logData.on('close', () => {
+        console.log('LOG CLOSE')
     })
 
     /* Add child to plaground (process manager). */
@@ -141,30 +148,30 @@ function run_script(command, args, _callback, _childid) {
     // })
 
     /* Set output encoding. */
-    child.stdout.setEncoding('utf8')
+    // child.stdout.setEncoding('utf8')
 
     // child.on('message', (_msg) => {
     //     console.log('MESSAGE', _msg);
     // })
 
     /* Handle data. */
-    child.stdout.on('data', function (data) {
-    // child.stdout.on('data', (data) => {
-        /* Convert the data to a string. */
-        output = data.toString()
-        console.log('SCRIPT OUTPUT', output)
-    })
+    // child.stdout.on('data', function (data) {
+    // // child.stdout.on('data', (data) => {
+    //     /* Convert the data to a string. */
+    //     output = data.toString()
+    //     console.log('SCRIPT OUTPUT', output)
+    // })
 
     /* Set error encoding. */
-    child.stderr.setEncoding('utf8')
+    // child.stderr.setEncoding('utf8')
 
     /* Handle errors. */
-    child.stderr.on('data', function (data) {
-    // child.stderr.on('data', (data) => {
-        // Return some data to the renderer process with the mainprocess-response ID
-        mainWindow.webContents.send('mainprocess-response', data)
-        console.log(data)
-    })
+    // child.stderr.on('data', function (data) {
+    // // child.stderr.on('data', (data) => {
+    //     // Return some data to the renderer process with the mainprocess-response ID
+    //     mainWindow.webContents.send('mainprocess-response', data)
+    //     console.log(data)
+    // })
 
     /* Handle close. */
     child.on('close', (_code) => {
