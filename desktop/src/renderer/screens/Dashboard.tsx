@@ -6,6 +6,8 @@ import {
     VictoryChart,
 } from 'victory'
 
+const PROCESS_ID = 'nexa.miner'
+
 import icon from '../../../assets/logo.png'
 
 const data = [
@@ -16,6 +18,21 @@ const data = [
     { month: 6, earnings: 18000 },
     { month: 7, earnings: 29000 },
 ]
+
+const startMining = () => {
+    /* Send IPC message. */
+    window.electron.ipcRenderer
+        .sendMessage(
+            'start-mining',
+            [
+                'cd',
+                '/Workspace/modenero/nexa/build/src/',
+                '&&',
+                './nexa-miner',
+                PROCESS_ID,
+            ]
+        )
+}
 
 const Dashboard = () => {
     return (
@@ -152,21 +169,21 @@ const Dashboard = () => {
 
             <div className="my-5 mx-3 border-t-2 border-gray-500" />
 
-            <section className="-mt-3 flex flex-row px-3 justify-around">
+            <section className="-mt-3 flex flex-row px-3 justify-around bg-pink-500">
 
-                <Link to="/nodes" className="w-32 px-5 py-1 flex flex-col items-center group bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md transform duration-200 hover:scale-105">
+                <Link to="/nodes" className="px-5 py-1 flex flex-col items-center group bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md transform duration-200 hover:scale-105">
                     <span className="text-lg text-gray-800 font-bold uppercase">
                         Nodes
                     </span>
                 </Link>
 
-                <Link to="/federation" className="w-32 px-5 py-1 flex flex-col items-center group bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md transform duration-200 hover:scale-105">
+                <button onClick={startMining} className="my-2 px-5 flex items-center bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md cursor-pointer transform duration-200 hover:scale-105">
                     <span className="text-lg text-gray-800 font-bold uppercase">
-                        The Fed
+                        Start Mining
                     </span>
-                </Link>
+                </button>
 
-                <Link to="/settings" className="w-32 px-5 py-1 flex flex-col items-center group bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md transform duration-200 hover:scale-105">
+                <Link to="/settings" className="px-5 py-1 flex flex-col items-center group bg-gray-100 border-2 border-blue-500 rounded-lg shadow-md transform duration-200 hover:scale-105">
                     <span className="text-lg text-gray-800 font-bold uppercase">
                         Settings
                     </span>

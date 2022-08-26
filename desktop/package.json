@@ -1,8 +1,8 @@
 {
-  "name": "sbx-manager",
-  "version": "22.7.14",
+  "name": "nexa-runner",
+  "version": "22.8.26",
   "license": "MIT",
-  "description": "SmartBCH peer-to-peer network manager, supporting: SHA-Matrix, Governance, Treasury and more..",
+  "description": "NEXA full node manager and miner for enterprises.",
   "main": "./src/main/main.ts",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -91,7 +91,9 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-router-dom": "6.3.0",
+    "tailing-stream": "0.2.0",
     "tailwindcss": "2.2.19",
+    "tree-kill": "1.2.2",
     "victory": "36.5.3"
   },
   "devDependencies": {

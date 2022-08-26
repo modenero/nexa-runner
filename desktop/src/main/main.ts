@@ -12,15 +12,175 @@ import path from 'path'
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { autoUpdater } from 'electron-updater'
 import log from 'electron-log'
+import fs from 'fs'
+
+import { spawn } from 'child_process'
+import kill from 'tree-kill'
+
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
 
 class AppUpdater {
     constructor() {
-        log.transports.file.level = 'info'
+        log.transports.file.level = 'fsinfo'
         autoUpdater.logger = log
         autoUpdater.checkForUpdatesAndNotify()
     }
+}
+
+/* Initialize playground. */
+const playground = {}
+
+/**
+ * Stop Script
+ *
+ * Terminates a running child.
+ */
+function stop_script(_childid, _callback) {
+    console.log('STOP CHILD ID', _childid)
+
+    if (!playground[_childid]) {
+        // alert('Could not find child id', _childid)
+        throw new Error(`Could not find child [ ${_childid} ]`)
+    }
+
+    /* Kill child. */
+    kill(playground[_childid].pid)
+
+    /* Remove child from playground. */
+    delete playground[_childid]
+
+    /* Handle method callback. */
+    if (typeof _callback === 'function')
+        _callback(`Killed [ ${_childid} ]`)
+}
+
+/**
+ * Run Script
+ *
+ * This function will output the lines from the script
+ * and will return the full combined output
+ * as well as exit code when it's done (using the callback).
+ */
+function run_script(command, args, _callback, _childid) {
+    // console.log('START CHILD ID', _childid)
+
+    /* Initialize output handler. */
+    let output
+
+    /* Run child process. */
+    // const child = spawn(command, args, {
+    //     encoding: 'utf8',
+    //     shell: true,
+    // })
+
+    const minerPath = '/Workspace/modenero/nexa/build/src/nexa-miner'
+    const logPath = '/Workspace/modenero/nexa/build/src/nexa-miner.log'
+
+    const child = spawn(minerPath, [''])
+
+    // const child = require('child_process')
+    //     .exec(minerPath, []);
+    // use event hooks to provide a callback to execute when data are available:
+
+    // const child = require('child_process')
+    //     .execFile(minerPath, [], {
+    //     // detachment and ignored stdin are the key here:
+    //     detached: true,
+    //     stdio: [ 'ignore', 1, 2 ]
+    // });
+    // and unref() somehow disentangles the child's event loop from the parent's:
+    // child.unref();
+
+    // child.stdout.on('data', function(data) {
+    //     console.log(data.toString());
+    // });
+
+    console.info('Process ID:', child.pid)
+
+    // This line opens the file as a readable stream
+    // const readStream = fs.createReadStream(logPath, 'utf8');
+
+    // readStream.on('open', function () {
+    //     // This just pipes the read stream to the response object (which goes to the client)
+    //     console.log('opened!')
+    // });
+
+    // readStream.on('data', function (data) {
+    //     // This just pipes the read stream to the response object (which goes to the client)
+    //     // readStream.pipe(console.log);
+    //     console.log('DATA', data);
+    //
+    // });
+
+    // This catches any errors that happen while creating the readable stream (usually invalid names)
+    // readStream.on('error', function(err) {
+    //     console.error(err)
+    // });
+
+    const TailingReadableStream = require('tailing-stream')
+
+    const stream = TailingReadableStream.createReadStream(logPath, { timeout: 0 });
+
+    stream.on('data', buffer => {
+        console.log('TAIL DATA', buffer.toString())
+    })
+
+    stream.on('close', () => {
+        console.log("TAIL CLOSE")
+    })
+
+    /* Add child to plaground (process manager). */
+    playground[_childid] = child
+
+    /* Handle timeout. */
+
+    /* Handle errors. */
+    // child.on('error', (error) => {
+    //     console.error(error)
+    // })
+
+    /* Set output encoding. */
+    child.stdout.setEncoding('utf8')
+
+    // child.on('message', (_msg) => {
+    //     console.log('MESSAGE', _msg);
+    // })
+
+    /* Handle data. */
+    child.stdout.on('data', function (data) {
+    // child.stdout.on('data', (data) => {
+        /* Convert the data to a string. */
+        output = data.toString()
+        console.log('SCRIPT OUTPUT', output)
+    })
+
+    /* Set error encoding. */
+    child.stderr.setEncoding('utf8')
+
+    /* Handle errors. */
+    child.stderr.on('data', function (data) {
+    // child.stderr.on('data', (data) => {
+        // Return some data to the renderer process with the mainprocess-response ID
+        mainWindow.webContents.send('mainprocess-response', data)
+        console.log(data)
+    })
+
+    /* Handle close. */
+    child.on('close', (_code) => {
+        switch (_code) {
+            case null:
+            case 0:
+                console.info('End process.')
+                break
+            default:
+                console.error('Unknown error code:', _code)
+        }
+
+        /* Handle method callback. */
+        if (typeof _callback === 'function')
+            _callback(output)
+    })
 }
 
 let mainWindow: BrowserWindow | null = null
@@ -29,6 +189,23 @@ ipcMain.on('ipc-example', async (event, arg) => {
     const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`
     console.log(msgTemplate(arg))
     event.reply('ipc-example', msgTemplate('pong'))
+})
+
+/* Handle local node startups. */
+ipcMain.on('start-mining', async (_event, _args) => {
+    // console.log('\nLOCAL NODE ARGS', _args)
+
+    /* Request (initial) command. */
+    const cmd = _args.shift()
+    const childid = _args.pop()
+    // console.log('CMD', cmd)
+    // console.log('NEW ARGS', _args)
+
+    /* Run the command-line script. */
+    run_script(cmd, _args, (_results) => {
+        /* Send IPC response. */
+        _event.reply('response-local-node', _results)
+    }, childid)
 })
 
 if (process.env.NODE_ENV === 'production') {
@@ -72,9 +249,8 @@ const createWindow = async () => {
 
     mainWindow = new BrowserWindow({
         show: false,
-        // width: 900,
-        width: 480,
-        height: 640,
+        width: 800,
+        height: 540,
         icon: getAssetPath('logo.png'),
         webPreferences: {
             preload: app.isPackaged

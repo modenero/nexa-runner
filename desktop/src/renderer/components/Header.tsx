@@ -14,11 +14,11 @@ const Header = () => {
             <div className="flex flex-col items-end">
                 <div className="flex mx-3 pt-1 text-right">
                     <h1 className="text-2xl text-gray-700 tracking-tighter font-bold">
-                        Smart Bitcoin Exchange
+                        Nexa
                     </h1>
 
                     <h1 className="ml-1 text-2xl text-purple-700 tracking-tighter font-bold uppercase">
-                        Manager
+                        Runner
                     </h1>
                 </div>
 

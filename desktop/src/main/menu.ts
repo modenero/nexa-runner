@@ -285,38 +285,35 @@ export default class MenuBuilder {
                         accelerator: 'Ctrl+N',
                     },
                     {
-                        label: 'SBX DAO',
+                        label: `Ava's DAO`,
                         click() {
-                            shell.openExternal('https://gov.sbx.cash')
+                            shell.openExternal('https://avasdao.org')
                         },
                     },
                 ],
             },
             {
-                label: '&Gov',
+                label: '&Mining',
                 submenu: [
                     {
-                        label: '&Create Proposal',
+                        label: '&Deploy new worker',
                         accelerator: 'Ctrl+C',
                         click: () => {
                             dialog.showMessageBox({
                                 type: 'info',
-                                title: 'Governance',
-                                message: 'Would you like to create a new proposal?',
+                                title: 'Mining Manager',
+                                message: 'Would you like to deploy a new worker?',
                             })
                         },
                     },
                     { type: 'separator' },
                     {
-                        label: 'Voting Stats',
+                        label: 'Mining Stats',
                     },
                     {
-                        label: 'Proposal Stats',
-                    },
-                    {
-                        label: 'SBX DAO',
+                        label: `Nexa Rocks`,
                         click() {
-                            shell.openExternal('https://gov.sbx.cash')
+                            shell.openExternal('https://nexa.rocks')
                         },
                     },
                 ],
@@ -357,7 +354,7 @@ export default class MenuBuilder {
                             dialog.showMessageBox({
                                 type: 'info',
                                 title: 'Help & Support',
-                                message: 'Would you like to send your logs to the SBX Support Team?',
+                                message: 'Would you like to send your logs to the Ava Support Team?',
                             })
                         },
                     },
