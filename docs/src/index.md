@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: A trustless & peer-to-peer exchange for the Nexa community.
+heroImage: https://nexa.run/logo.png
+tagline: Manage your NEXA full node with ease.
 actionText: Quick Start →
 actionLink: /guide/
 features:

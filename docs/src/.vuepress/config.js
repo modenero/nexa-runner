@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Nexa Exchange Docs',
+  title: 'Nexa Runner Docs',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -38,18 +38,18 @@ module.exports = {
         link: '/users/',
       },
       {
-        text: 'For Devs',
-        link: '/devs/'
+        text: 'For Miners',
+        link: '/miners/'
       },
       {
-        text: 'Launch App',
-        link: 'https://app.nexa.exchange'
+        text: 'Launch Explorer',
+        link: 'https://explorer.nexa.org'
       }
     ],
     sidebar: {
       '/devs/': [
         {
-          title: 'Developer Guide',
+          title: 'User Guide',
           collapsable: false,
           children: [
             '',
@@ -57,9 +57,9 @@ module.exports = {
           ]
         }
       ],
-      '/users/': [
+      '/miners/': [
         {
-          title: 'User Guide',
+          title: 'Miner Guide',
           collapsable: false,
           children: [
             '',
