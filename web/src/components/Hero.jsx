@@ -53,24 +53,27 @@ export function Hero() {
                         />
 
                         <div className="relative">
-                            <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                                NEXA Is Bitcoin 3.0
-                            </p>
+                            <h1 className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+                                NEXA Runner for Enterprise
+                            </h1>
 
                             <div className="mt-3 text-2xl tracking-tight text-slate-400">
-                                Today we begin our journey down the NEXA rabbit hole:
+                                Today begins your journey down the NEXA rabbit hole:
 
                                 <div className="block ml-10">
-                                    <span className="block">☑️ Step 1: <span className="text-gray-300 font-medium">Install</span> Nexa Runner onto your PC</span>
+                                    <span className="block">☑️ Step 1: <span className="text-gray-300 font-medium">Install</span> Nexa Runner onto your PC or VPS</span>
                                     <span className="block">☑️ Step 2: <span className="text-gray-300 font-medium">Launch</span> your fleet of NEX miners</span>
                                     <span className="block">☑️ Step 3: <span className="text-gray-300 font-medium">Profit!</span></span>
                                 </div>
                             </div>
 
                             <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                                <Button href="/">Get started</Button>
-                                <Button href="/" variant="secondary">
-                                    View on GitHub
+                                <Button href="/" className="text-xl">
+                                    Get started
+                                </Button>
+
+                                <Button href="https://github.com/avasdao/nexa-runner" target="_blank" variant="secondary" className="text-xl">
+                                    View the Source
                                 </Button>
                             </div>
                         </div>
