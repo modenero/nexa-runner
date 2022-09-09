@@ -1,6 +1,6 @@
 [package]
-name = "web-miner"
-version = "0.1.0"
+name = "wasm-miner"
+version = "22.9.9"
 authors = ["Ava's DAO <support@avasdao.org>"]
 edition = "2018"
 
