@@ -15,5 +15,5 @@ extern {
 
 #[wasm_bindgen]
 pub fn greet() {
-    alert("Hello, web-miner!");
+    alert("Hello, Nexa wasm miner!");
 }
