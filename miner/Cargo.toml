@@ -1,0 +1,9 @@
+[package]
+name = "miner"
+version = "22.9.9"
+authors = ["Ava's DAO <support@avasdao.org>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
