@@ -14,6 +14,6 @@ extern {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, Nexa wasm miner!");
+pub fn greet(name: &str) {
+    alert(&format!("Hi, {}!", name));
 }
