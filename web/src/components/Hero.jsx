@@ -54,7 +54,7 @@ export function Hero() {
 
                         <div className="relative">
                             <h1 className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                                NEXA Runner for Enterprise
+                                Nexa Runner (Universal)
                             </h1>
 
                             <div className="mt-3 text-2xl tracking-tight text-slate-400">
