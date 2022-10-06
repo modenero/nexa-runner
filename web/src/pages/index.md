@@ -1,6 +1,6 @@
 ---
 title: Nexa Runner Quick Start
-pageTitle: Nexa Runner - Switch On Bitcoin 3.0
+pageTitle: Nexa Runner Enterprise
 description: Nexa Runner manages your full Nexa node, including all coin mining activities.
 ---
 
